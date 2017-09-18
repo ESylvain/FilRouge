@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<h:head>
+        <title>Super Site <ui:insert name="title">#{bundle['application.defaultpage.title']}</ui:insert></title>
+        <link href="#{request.contextPath}/content/default.css" rel="stylesheet" type="text/css"/>
+        
+        <link rel="stylesheet" type="text/css" href='#{request.contextPath}/JS/jquery-ui-1.12.1/jquery-ui.min.css' />
+		<link href="#{request.contextPath}/content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href='#{request.contextPath}/content/default.css' />
+		<link rel="stylesheet" type="text/css" href='#{request.contextPath}/content/petit.css' />
+		<link rel="stylesheet" type="text/css" href='#{request.contextPath}/content/font-awesome-4.7.0/css/font-awesome.css' />
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet"/>	
+
+		<script type="text/javascript" src="#{request.contextPath}/JS/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="#{request.contextPath}/JS/jquery-ui-1.12.1/jquery-ui.js"></script>
+    	<script type="text/javascript" src="#{request.contextPath}/JS/test.js"></script>
+		<script type="text/javascript" src="#{request.contextPath}content/bootstrap-3.3.7-dist/js/bootstrap.min.js"	></script>
+		
+		<h:outputScript name="jsf.js" library="javax.faces" target="head"/>
+        
+    </h:head>
+    
+    <h:body>
+    
+    	<div id="container">
+    		<div id="header" >
+    			<ui:insert name="header">
+    				
+    				<header>
+    				<div id="logo">
+				<img src="../img/logoT.png" alt="logo" id="iLogo"/>
+			</div>
+			<div id="titre">Super Formation</div>
+			<nav>
+				<ol id="menu">
+					<li><a href="#{request.contextPath}/index.html">Accueil</a></li>
+					<li>
+						<a href="#{request.contextPath}/xhtml/formationListe.xhtml">Formation!!</a>
+					</li>
+					<li><a href="#{request.contextPath}/index.xhtml">Cours!</a></li>
+					<li><form action="#{request.contextPath}/ListFormateurs" method="post"><a>
+						<button type="submit" name="formateur" value="1" class="btn-link">Formateurs</button>
+						</a></form></li>
+					
+				</ol>
+				<div id="menu_small">
+					<span class="fa fa-bars" id="ham1"></span>
+				</div>
+			</nav>
+    				</header>
+    				
+    			</ui:insert>
+    		</div>
+    		<div id="content">
+    			<ui:insert name="content">
+    				#{bundle['application.defaultpage.body.content']}
+    			</ui:insert>
+    		</div>
+    		<div id="footer">
+    			<ui:insert name="footer">
+    				<h1>#{bundle['application.defaultpage.footer.content']}</h1>
+    			</ui:insert>
+    		</div>
+    	</div>
+    	
+    <div style="color:blue">Bienvenue, #{bundle['application.user.name']} !</div>
+    
+    <!--  <table border="1" >
+			<th>Key</th>
+			<th>Value</th>
+			<c:forEach items="${header}" var="headerP">
+			<tr>
+				<td>${headerP.key}</td>
+				<td>${headerP.value}</td>
+			</tr>
+		</c:forEach>
+	</table>-->
+    	
+    </h:body>
+</html>

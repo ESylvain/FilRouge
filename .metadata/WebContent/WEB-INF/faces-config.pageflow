@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15047775600230" configfile="/ProjetWeb3_JSF/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="formationListe" x="122" y="754" id="pf15048588266360" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15048614329548 pf15048614329549 pf150486143295410 pf15048809536290" path="/xhtml/formationListe.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="xhtml/formationDetail.xhtml" x="338" y="178" id="pf150486143295511" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15048614329548" path="/xhtml/formationDetail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="xhtml/formationFeedback.xhtml" x="338" y="562" id="pf150486143295512" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15048614329549" path="/xhtml/formationFeedback.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="xhtml/404.xhtml" x="338" y="946" id="pf150486143295513" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf150486143295410" path="/xhtml/404.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="xhtml/formationCreate.xhtml" x="338" y="1330" id="pf15048809536301" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15048809536290" path="/xhtml/formationCreate.xhtml"/>
+  <links id="pf15048614329548" target="pf150486143295511" source="pf15048588266360" outcome="detail"/>
+  <links id="pf15048614329549" target="pf150486143295512" source="pf15048588266360" outcome="feedback"/>
+  <links id="pf150486143295410" target="pf150486143295513" source="pf15048588266360" outcome="error"/>
+  <links id="pf15048809536290" target="pf15048809536301" source="pf15048588266360" outcome="create"/>
+</pageflow:Pageflow>

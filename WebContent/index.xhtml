@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:c="http://java.sun.com/jsp/jstl/core">
+	  
+	  <h:body>
+	 
+
+<ui:composition template="/WEB-INF/templates/simple.xhtml">
+	<ui:define name="title">
+		#{bundle['application.loginpage.title']}
+	</ui:define>
+	
+	<ui:define name="content">
+
+		<h:form>
+			<h:panelGrid columns="3">
+				<h:outputText value="Nom formateur STOPPPPPP"></h:outputText>
+				<h:inputText id="nom" value="#{formateurBean.nom}" required="true" requiredMessage="blbabla"/>
+				<h:message for="nom" styleClass="errorMessage"></h:message>
+				
+				<h:outputText value="Prenom formateur"></h:outputText>
+				<h:inputText id="prenom" value="#{formateurBean.prenom}" required="true" requiredMessage="blbabla"/>
+				<h:message for="prenom" styleClass="errorMessage"></h:message>
+			</h:panelGrid>
+			<h:commandButton value="Test appel methode" action="#{formateurBean.listeF}"></h:commandButton>
+			<br />
+			<br />
+		</h:form>
+		<br />
+		<h:dataTable value="#{formateurBean.formateurs}" var="_row">
+			 <h:column>
+			    <f:facet name="header">
+			      <h:outputText value="id" />
+			    </f:facet>
+			    <h:outputText value="#{_row.id}" />
+  			</h:column>
+			 <h:column>
+			    <f:facet name="header">
+			      <h:outputText value="Nom" />
+			    </f:facet>
+			    <h:outputText value="#{_row.nom}" />
+  			</h:column>
+  			<h:column>
+			    <f:facet name="header">
+			      <h:outputText value="Prenom" />
+			    </f:facet>
+			    <h:outputText value="#{_row.prenom}" />
+  			</h:column>
+  			<h:column>
+			    <f:facet name="header">
+			      <h:outputText value="Cours" />
+			    </f:facet>
+			    <h:outputText value="#{_row.courss}" />
+  			</h:column>
+	</h:dataTable>
+
+	</ui:define>
+</ui:composition>
+
+</h:body>
+</html>

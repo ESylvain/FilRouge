@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.drivers.class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://192.168.200.54:3306/MaBDD</property>
+		<property name="hibernate.connection.username">dev</property>
+		<property name="hibernate.connection.password">dev</property>
+		
+		<!-- <property name="show_sql">true</property> -->
+
+		<mapping class="fr.filrouge.hibernate.Stagiaire"/>
+		<mapping class="fr.filrouge.hibernate.Cours"/>
+		<mapping class="fr.filrouge.hibernate.Formateur"/>
+		<mapping class="fr.filrouge.hibernate.Formation"/>
+		<!-- <mapping class="fr.acceis.jpa.test.jpa.Professeur"/>
+		<mapping class="fr.acceis.jpa.test.jpa.Creneau"/>
+		<mapping class="fr.acceis.jpa.test.jpa.Salle"/>
+		<mapping class="fr.acceis.jpa.test.jpa.Horaire"/> -->
+		
+		
+	</session-factory>
+	
+	
+</hibernate-configuration>
